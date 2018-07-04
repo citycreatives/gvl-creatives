@@ -5,10 +5,25 @@
 header {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 1.4rem;
+}
+
+section {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc(50% - 2rem));
+  gap: 4rem;
+  justify-content: space-evenly;
 }
 
 .content {
   padding: 3.5rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .hero {
@@ -27,10 +42,7 @@ header {
   align-self: center;
   filter: grayscale();
   opacity: 0.5;
-}
-
-h1 {
-  font-size: 1.4rem;
+  min-width: 480px;
 }
 
 .hero-content h1 {
@@ -45,9 +57,23 @@ h1 {
 }
 
 .members {
-  display: flex;
-  margin: -0.5rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.craftsmanship p {
+  font-size: 1.2rem;
+  opacity: 0.5;
+  line-height: 2rem;
+}
+
+.craftsmanship ol {
+  font-size: 1.2rem;
+  opacity: 0.5;
+  line-height: 2rem;
+  padding-left: 4rem;
 }
 
 .button {
@@ -56,7 +82,7 @@ h1 {
   color: white;
   padding: 1rem;
   font-weight: bold;
-  margin-top: 5rem;
+  margin-top: 3rem;
   font-size: 1rem;
   user-select: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -69,12 +95,20 @@ h1 {
   cursor: pointer;
 }
 
-@media all and (max-width: 950px) {
-  .hero-illustration {
-    display: none;
-  }
+.weather {
+  text-align: right;
+}
 
+@media all and (max-width: 900px) {
+  section { grid-template-columns: auto; }
+  .hero-illustration { display: none; }
   .content {
     padding: 2rem;
+    max-width: 600px;
+  }
+  .weather {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: left;
   }
 }
